@@ -1,0 +1,38 @@
+buildscript {
+    ext {
+        // Define the Java version
+        javaVersion = JavaVersion.VERSION_17
+        roomVersion = '2.6.1'
+        agp_version = '8.8.0'
+    }
+    ext.kotlin_version = '1.7.20'  // Updated Kotlin version
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.8.0'  // Updated Android Gradle Plugin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.android.tools.build:gradle:$agp_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+}
+
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+tasks.register('clean', Delete) {  // Updated clean task syntax
+    delete rootProject.buildDir
+}
