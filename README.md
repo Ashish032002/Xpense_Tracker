@@ -1,4 +1,4 @@
-# 📱 Xpense Tracker
+# 📱Android App for tracking Expense 
 
 An intelligent Android application that revolutionizes expense tracking by automatically extracting transaction details from your receipts using advanced Vision API technology.
 
